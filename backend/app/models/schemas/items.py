@@ -10,6 +10,12 @@ DEFAULT_ITEMS_OFFSET = 0
 
 
 class ItemForResponse(RWSchema, Item):
+
+    def __init__(self, **data):
+        if 'image' in data and (data['image'] is None or data['image'] == '') :
+            data['image'] = '/placeholder.png'
+        super().__init__(**data)
+
     tags: List[str] = Field(..., alias="tagList")
 
 

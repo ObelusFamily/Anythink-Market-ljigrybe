@@ -3,7 +3,6 @@ import CommentContainer from "./CommentContainer";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import marked from "marked";
-import { imageOrPlaceholder } from "../../helpers/images";
 import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
@@ -49,7 +48,7 @@ const Item = (props) => {
           <div className="row bg-white p-4">
             <div className="col-6">
               <img
-                src={imageOrPlaceholder(props.item.image)}
+                src={props.item.image}
                 alt={props.item.title}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}
